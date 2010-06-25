@@ -1,3 +1,8 @@
 # system.prop for s5
-wlan.interface=wlan0
+ro.config.sync = yes
+app.setupwizard.disable=1
+keyguard.no_require_sim=1
+ro.alarm.volume.adjustable=true
+ro.simulated.phone=false
+wifi.interface=wlan0
 # end system.prop for s5

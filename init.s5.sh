@@ -3,6 +3,9 @@
 # no sleep!
 echo s5NoSleep > /sys/power/wake_lock
 
+#turn on wifi
+/system/xbin/s5_onoff 0x7 0x1
+
 #turn on BT
 /system/xbin/s5_onoff 0x2 0x1
 #modprobe libertas_sdio		# moved to initrd"

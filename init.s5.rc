@@ -1,2 +1,19 @@
-service s5hw /system/bin/sh /system/etc/init.s5.sh
+on boot
+    setprop ro.radio.use-ppp yes
+    setprop ro.radio.noril no
+    setprop status.battery.state Slow
+    setprop status.battery.level 5
+    setprop status.battery.level_raw  50
+    setprop status.battery.level_scale 9
+    setprop alsa.mixer.playback.master Master
+    setprop alsa.mixer.capture.master Capture
+    setprop alsa.mixer.playback.earpiece Master
+    setprop alsa.mixer.capture.earpiece Capture
+    setprop alsa.mixer.playback.headset Master
+    setprop alsa.mixer.playback.speaker Master
+
+service s5wifi /system/bin/sh /system/etc/init.s5.sh
+	oneshot
+
+service tslib /system/bin/sh /system/etc/ins_pointercal.sh
 	oneshot
