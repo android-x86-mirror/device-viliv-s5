@@ -1,0 +1,24 @@
+s5_info()
+{
+	# common for all Eee PC models
+	PREDEV=snd-hda-codec-realtek
+	SNDDEV=snd-hda-intel
+	CAMDEV=uvcvideo
+	WIFDEV=libertas_sdio
+	BOARD_USES_TSLIB=true
+}
+
+detect_hardware()
+{
+	#load psb driver
+	modprobe i2c-algo-bit
+	insmod /system/lib/modules/drm.ko
+	insmod /system/lib/modules/psb.ko
+	
+	#enable TS
+	/system/xbin/iowrite 0x1de 0x5a
+	/system/xbin/iowrite 0x1df 0xa5
+	/system/xbin/ioread 0x1de
+
+	s5_info
+}

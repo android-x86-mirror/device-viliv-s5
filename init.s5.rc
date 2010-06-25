@@ -1,0 +1,2 @@
+service s5hw /system/bin/sh /system/etc/init.s5.sh
+	oneshot

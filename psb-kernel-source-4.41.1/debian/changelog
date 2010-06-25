@@ -1,0 +1,5 @@
+psb-kernel-source (4.41.1-0ubuntu1~904um1) jaunty; urgency=low
+
+  * Initial package for Jaunty, utilising DKMS.
+
+ -- Steve Kowalik <stevenk@ubuntu.com>  Thu, 25 Jun 2009 11:44:04 +1000
