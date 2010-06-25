@@ -1,3 +1,4 @@
 # system.prop for s5
-#wlan.driver.status=ok
+wlan.interface=wlan0
+wlan.driver.status=ok
 # end system.prop for s5

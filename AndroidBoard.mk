@@ -5,9 +5,9 @@ TARGET_PREBUILT_APPS := $(subst $(LOCAL_PATH)/,,$(wildcard $(LOCAL_PATH)/app/*))
 TARGET_KERNEL_CONFIG := $(LOCAL_PATH)/s5_defconfig
 
 #copy firmware files
-$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, firmware/msvdx_fw.bin)
-$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, firmware/sd8686.bin)
-$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, firmware/sd8686_helper.bin)
+$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, msvdx_fw.bin)
+$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, sd8686.bin)
+$(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, sd8686_helper.bin)
 
 #compile and add psb modules
 #this is not an Android Makefile format :(
