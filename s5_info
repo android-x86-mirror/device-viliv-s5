@@ -38,6 +38,9 @@ detect_hardware()
 	FW_FILE_PATH="/system/lib/firmware/sd8686.bin"
 	s5_load_firmware
 
+	#rename wpa_supplicant driver
+	sed -i "s/Dwext/Dawext/g" init.rc
+
 	#load psb driver
 	modprobe i2c-algo-bit
 	insmod /system/lib/modules/drm.ko
