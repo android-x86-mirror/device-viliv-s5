@@ -13,7 +13,7 @@ $(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, sd8686_helper.bin)
 #this is not an Android Makefile format :(
 #ToDo : need to find a way to configure the path -_-;;
 KBUILD_OUTPUT := $(CURDIR)/$(TARGET_OUT_INTERMEDIATES)/kernel
-PSB_SRC_DIR := psb-kernel-source-4.41.1
+PSB_SRC_DIR := psb-android
 $(LOCAL_PATH)/drm.ko : kernel $(LOCAL_PATH)/psb.ko
 	cp $(TARGET_DEVICE_DIR)/$(PSB_SRC_DIR)/drm.ko $(TARGET_DEVICE_DIR)
 
