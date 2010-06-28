@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
-# no sleep!
-echo s5NoSleep > /sys/power/wake_lock
+# no sleep?
+#echo s5NoSleep > /sys/power/wake_lock
 
 #turn on BT
 /system/xbin/s5_onoff 0x2 0x1
