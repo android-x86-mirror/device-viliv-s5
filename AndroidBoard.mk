@@ -20,8 +20,8 @@ $(call add-prebuilt-targets,$(TARGET_OUT_ETC), asound.conf)
 #ToDo : need to find a way to configure the path -_-;;
 KBUILD_OUTPUT := $(CURDIR)/$(TARGET_OUT_INTERMEDIATES)/kernel
 PSB_SRC_DIR := psb-android
-$(LOCAL_PATH)/drm.ko : kernel $(LOCAL_PATH)/psb.ko
-	cp $(TARGET_DEVICE_DIR)/$(PSB_SRC_DIR)/drm.ko $(TARGET_DEVICE_DIR)
+$(LOCAL_PATH)/drm-psb.ko : kernel $(LOCAL_PATH)/psb.ko
+	cp $(TARGET_DEVICE_DIR)/$(PSB_SRC_DIR)/drm-psb.ko $(TARGET_DEVICE_DIR)
 
 
 $(LOCAL_PATH)/psb.ko : kernel
@@ -29,7 +29,7 @@ $(LOCAL_PATH)/psb.ko : kernel
 		LINUXDIR=$(KBUILD_OUTPUT) DRM_MODULES=psb
 	cp $(TARGET_DEVICE_DIR)/$(PSB_SRC_DIR)/psb.ko $(TARGET_DEVICE_DIR)
 
-$(call add-prebuilt-targets,$(TARGET_OUT)/lib/modules, drm.ko)
+$(call add-prebuilt-targets,$(TARGET_OUT)/lib/modules, drm-psb.ko)
 $(call add-prebuilt-targets,$(TARGET_OUT)/lib/modules, psb.ko)
 
 include $(GENERIC_X86_ANDROID_MK)
