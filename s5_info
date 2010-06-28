@@ -11,13 +11,13 @@ s5_load_firmware()
 {
 	FW_PATH="/sys/class/firmware/${FW_DEVNAME}"
 	while [ ! -d ${FW_PATH} ]; do
-		 echo 0 > /dev/null
+		usleep 10000
 	done
 	echo 1 > ${FW_PATH}/loading
 	cat ${FW_FILE_PATH} > ${FW_PATH}/data
 	echo 0 > ${FW_PATH}/loading
 	while [ -d ${FW_PATH} ]; do
-		 echo 0 > /dev/null
+		usleep 10000
 	done
 }
 
@@ -34,6 +34,7 @@ detect_hardware()
 	FW_DEVNAME="mmc1:0001:1"
 	FW_FILE_PATH="/system/lib/firmware/sd8686_helper.bin"
 	s5_load_firmware
+	usleep 10000
 	FW_DEVNAME="mmc1:0001:1"
 	FW_FILE_PATH="/system/lib/firmware/sd8686.bin"
 	s5_load_firmware

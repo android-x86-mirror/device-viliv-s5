@@ -12,6 +12,9 @@ $(call add-prebuilt-targets,$(TARGET_OUT)/lib/firmware, sd8686_helper.bin)
 #copy init shell script
 $(call add-prebuilt-targets,$(TARGET_OUT_ETC), init.s5.sh)
 
+#copy alsa configurations
+$(call add-prebuilt-targets,$(TARGET_OUT_ETC), asound.conf)
+
 #compile and add psb modules
 #this is not an Android Makefile format :(
 #ToDo : need to find a way to configure the path -_-;;
