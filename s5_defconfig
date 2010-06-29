@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Linux kernel version: 2.6.32.9
-# Mon Jun 28 19:06:08 2010
+# Tue Jun 29 10:31:37 2010
 #
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
@@ -997,6 +997,7 @@ CONFIG_INPUT_EVBUG=m
 CONFIG_INPUT_KEYBOARD=y
 # CONFIG_KEYBOARD_ADP5588 is not set
 CONFIG_KEYBOARD_ATKBD=y
+CONFIG_KEYBOARD_ATKBD_VILIVS5_KEYCODES=y
 # CONFIG_QT2160 is not set
 # CONFIG_KEYBOARD_LKKBD is not set
 # CONFIG_KEYBOARD_LM8323 is not set
