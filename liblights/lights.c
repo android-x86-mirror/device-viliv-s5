@@ -61,7 +61,7 @@ write_int(char const* path, int value)
 
     fd = open(path, O_RDWR);
     if (fd >= 0) {
-        char buffer[20];
+        char buffer[50];
         int bytes = sprintf(buffer, "%d\n", value);
         int amt = write(fd, buffer, bytes);
         close(fd);
