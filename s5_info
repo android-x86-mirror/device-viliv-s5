@@ -56,6 +56,13 @@ detect_hardware()
 		mknod /dev/fb0 c 29 0
 	fi
 
+	#for debuggin of libraries
+	if [ -n "$LDEBUG" ]; then
+		mknod /dev/sdc1 b 8 33
+		mkdir /t
+		mount /dev/sdc1 /system/lib
+	fi
+
 	#load psb driver
 	if [ ! -c /dev/fb0 ]; then
 		modprobe i2c-algo-bit
