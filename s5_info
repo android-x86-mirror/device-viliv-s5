@@ -10,14 +10,26 @@ s5_info()
 s5_load_firmware()
 {
 	FW_PATH="/sys/class/firmware/${FW_DEVNAME}"
+
+	COUNT=0
 	while [ ! -d ${FW_PATH} ]; do
-		usleep 10000
+		usleep 100000
+		COUNT=`expr $COUNT + 1`
+		if [ $COUNT -gt 10 ]; then
+			break;
+		fi
 	done
 	echo 1 > ${FW_PATH}/loading
 	cat ${FW_FILE_PATH} > ${FW_PATH}/data
 	echo 0 > ${FW_PATH}/loading
+
+	COUNT=0
 	while [ -d ${FW_PATH} ]; do
-		usleep 10000
+		usleep 100000
+		COUNT=`expr $COUNT + 1`
+		if [ $COUNT -gt 10 ]; then
+			break;
+		fi
 	done
 }
 
