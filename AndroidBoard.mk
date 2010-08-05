@@ -42,9 +42,6 @@ $(eval $(call add-prebuilt-target,$(TARGET_OUT_DATA_ETC),ts.conf))
 $(eval $(call add-prebuilt-target,$(TARGET_OUT_DATA_ETC),ts.env))
 $(eval $(call add-prebuilt-target,$(TARGET_OUT_DATA_ETC),ins_pointercal.sh))
 
-$(eval $(call add-prebuilt-target,$(TARGET_OUT)/lib/modules,psb.ko))
-$(eval $(call add-prebuilt-target,$(TARGET_OUT)/lib/modules,drm.ko))
-
 ALL_FIRMWARES := $(shell cd $(LOCAL_PATH) && find firmware -type f)
 $(eval $(foreach f,$(ALL_FIRMWARES),$(call add-prebuilt-target,$(TARGET_OUT_SHARED_LIBRARIES),$(f))))
 
