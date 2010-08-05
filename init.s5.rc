@@ -11,6 +11,7 @@ on boot
     setprop alsa.mixer.capture.earpiece Capture
     setprop alsa.mixer.playback.headset Master
     setprop alsa.mixer.playback.speaker Master
+	chmod 0000 /dev/dri/card0
 
 service s5wifi /system/bin/sh /system/etc/init.s5.sh
 	oneshot
