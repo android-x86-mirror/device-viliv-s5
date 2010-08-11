@@ -1,14 +1,14 @@
 #!/system/bin/sh
 
-# no sleep!
-echo s5NoSleep > /sys/power/wake_lock
-
 #turn on wifi
 /system/bin/s5_onoff 0x7 0x1
 
+# no sleep!
+echo s5NoSleep > /sys/power/wake_lock
+
 #turn on BT
+usleep 10000
 /system/bin/s5_onoff 0x2 0x1
-#modprobe libertas_sdio		# moved to initrd"
 
 #netcfg eth0 dhcp
 #setprop net.dns1 4.2.2.2
