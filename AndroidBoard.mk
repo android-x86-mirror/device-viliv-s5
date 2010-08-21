@@ -20,7 +20,7 @@ ALL_PREBUILT += $$(file)
 
 endef
 
-TARGET_KERNEL_CONFIG := android-s5_defconfig
+TARGET_KERNEL_CONFIG := $(LOCAL_PATH)/s5_defconfig
 
 define add-keymap
 
